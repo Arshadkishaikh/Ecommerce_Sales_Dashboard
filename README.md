@@ -48,7 +48,7 @@ This dashboard was built to answer the most pressing commercial questions facing
 
 ## 📊 Dashboard Preview
 
-![Ecommerce Sales Dashboard](./images/Ecommerce_Sales_Dashboard.png)
+![Ecommerce Sales Dashboard](./Ecommerce_Sales_Dashboard.png)
 
 > **Snapshot — Current Year Performance:**
 > - YTD Sales: **$2.06M** (▼ -1.93% vs. prior year)

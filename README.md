@@ -202,33 +202,6 @@ Sales Trend Color =
 IF([YoY Sales %] >= 0, "Green", "Red")
 ```
 
-### SQL Extraction Query (PostgreSQL)
-
-```sql
--- Base query used to extract and load data into Power BI
-SELECT
-    o.order_id,
-    o.order_date,
-    o.ship_mode,
-    c.customer_id,
-    c.segment       AS customer_segment,
-    c.region        AS customer_region,
-    c.state,
-    p.category      AS category_name,
-    p.product_name,
-    od.sales,
-    od.quantity,
-    od.discount,
-    od.profit
-FROM
-    orders o
-    JOIN customers c   ON o.customer_id = c.customer_id
-    JOIN order_details od ON o.order_id = od.order_id
-    JOIN products p    ON od.product_id = p.product_id
-ORDER BY
-    o.order_date ASC;
-```
-
 ---
 
 ## ✨ Dashboard Features

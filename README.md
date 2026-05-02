@@ -18,10 +18,7 @@
 - [Key Insights](#-key-insights)
 - [Tools & Technologies](#️-tools--technologies)
 - [DAX Measures & SQL Queries](#-dax-measures--sql-queries)
-- [Dashboard Features](#-dashboard-features)
-- [Project Structure](#-project-structure)
 - [How to Use](#-how-to-use)
-- [Future Enhancements](#-future-enhancements)
 - [Author](#-author)
 
 ---
@@ -204,47 +201,6 @@ IF([YoY Sales %] >= 0, "Green", "Red")
 
 ---
 
-## ✨ Dashboard Features
-
-| Feature | Description |
-|---|---|
-| **4 Sparkline KPI Cards** | YTD Sales, Profit, Quantity, and Profit Margin — each with YoY variance badge (▲/▼) and mini trend line |
-| **Segment Slicer** | Filter entire dashboard by Consumer, Corporate, or Home Office segment |
-| **Sales by Category Table** | YTD Sales, PYTD Sales, YoY % variance, and color-coded trend arrows per category |
-| **Top 5 Products Bar Chart** | Ranked horizontal bars showing best-performing products by YTD revenue |
-| **Bottom 5 Products Bar Chart** | Highlights underperforming SKUs — critical for catalog rationalization decisions |
-| **YTD Sales by Region Donut** | Four-region breakdown (West, East, Central, South) with percentage labels |
-| **Sales by State Bubble Map** | Geographic Bing Map with region-color-coded bubbles proportional to state-level sales |
-| **Shipping Type Pie Chart** | Breakdown of Standard / Second / First Class / Same Day fulfillment share |
-| **Full Cross-filtering** | All visuals respond to each other — click any element to drill into that slice |
-
----
-
-## 📁 Project Structure
-
-```
-ecommerce-sales-dashboard/
-│
-├── 📂 data/
-│   └── ecommerce_data.sql              # PostgreSQL schema + sample seed data
-│
-├── 📂 dashboard/
-│   └── Ecommerce_Sales_Dashboard.pbix  # Power BI file (data embedded)
-│
-├── 📂 images/
-│   └── Ecommerce_Sales_Dashboard.png   # Dashboard screenshot for README
-│
-├── 📂 dax/
-│   └── measures.dax                    # All DAX measures in plain text
-│
-├── 📂 sql/
-│   └── extraction_query.sql            # SQL query used to extract data
-│
-└── README.md                           # This file
-```
-
----
-
 ## 🚀 How to Use
 
 ### For Recruiters & Viewers
@@ -258,32 +214,6 @@ The dashboard screenshot above provides a full visual overview. To explore the *
 
 > 💡 *To reconnect to a live PostgreSQL database: Go to Home → Transform Data → Data Source Settings and update the server credentials.*
 
-### For Developers & Analysts
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/ecommerce-sales-dashboard.git
-
-# 2. Navigate into the project
-cd ecommerce-sales-dashboard
-
-# 3. (Optional) Load data into PostgreSQL
-psql -U your_username -d your_database -f data/ecommerce_data.sql
-
-# 4. Open dashboard in Power BI Desktop
-# File → Open → dashboard/Ecommerce_Sales_Dashboard.pbix
-```
-
----
-
-## 🔮 Future Enhancements
-
-- [ ] Add a **Customer Cohort & RFM Analysis** page (Recency, Frequency, Monetary segmentation)
-- [ ] Build a **Discount Impact Analysis** — correlating discount depth with profit margin erosion
-- [ ] Create a **Monthly Forecasting Page** using Power BI's built-in forecasting visuals
-- [ ] Add **Return Rate tracking** to surface true net revenue per product
-- [ ] Connect to **live PostgreSQL** with scheduled refresh via Power BI Service
-- [ ] Build a **Mobile-optimized layout** for on-the-go executive review
 
 ---
 
@@ -295,12 +225,11 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 👤 Author
 
-**[Your Full Name]**
+**[ARSHAD K I SHAIKH]**
 *Data Analyst | Power BI Developer | Ecommerce Analytics*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/YOUR_PROFILE)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/YOUR_USERNAME)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-orange?style=for-the-badge)](https://YOUR_PORTFOLIO_SITE)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/arshadkishaikh/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github)](https://github.com/Arshadkishaikh)
 
 ---
 

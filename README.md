@@ -126,71 +126,43 @@ Insights are framed as business decisions, not just data observations — the st
 -- ─────────────────────────────────────────
 -- 1. Year-to-Date Sales
 -- ─────────────────────────────────────────
-YTD Sales =
-TOTALYTD(
-    SUM(Orders[Sales]),
-    'Date'[Date]
-)
+YTD Sales = TOTALYTD(SUM(ecommerce_data[sales_per_order]),
+                    'Calendar'[Date])
 
 -- ─────────────────────────────────────────
 -- 2. Prior Year-to-Date Sales
 -- ─────────────────────────────────────────
-PYTD Sales =
-CALCULATE(
-    [YTD Sales],
-    SAMEPERIODLASTYEAR('Date'[Date])
-)
+PYTD Sales = CALCULATE(sum(ecommerce_data[sales_per_order]),
+                    DATESYTD(SAMEPERIODLASTYEAR('Calendar'[Date])))
+
 
 -- ─────────────────────────────────────────
 -- 3. Year-over-Year Sales Variance (%)
 -- ─────────────────────────────────────────
-YoY Sales % =
-DIVIDE(
-    [YTD Sales] - [PYTD Sales],
-    [PYTD Sales],
-    0
-)
+YoY Sales % = ([YTD Sales]-[PYTD Sales])/[PYTD Sales]
+
 
 -- ─────────────────────────────────────────
 -- 4. YTD Profit
 -- ─────────────────────────────────────────
-YTD Profit =
-TOTALYTD(
-    SUM(Orders[Profit]),
-    'Date'[Date]
-)
+YTD Profit = TOTALYTD(SUM(ecommerce_data[profit_per_order]), 'Calendar'[Date])
+
 
 -- ─────────────────────────────────────────
 -- 5. YTD Profit Margin (%)
 -- ─────────────────────────────────────────
-YTD Profit Margin =
-DIVIDE(
-    [YTD Profit],
-    [YTD Sales],
-    0
-)
+YTD Profit Margin = TOTALYTD([Profit Margin], 'Calendar'[Date])
 
 -- ─────────────────────────────────────────
 -- 6. YTD Quantity Sold
 -- ─────────────────────────────────────────
-YTD Quantity =
-TOTALYTD(
-    SUM(Orders[Quantity]),
-    'Date'[Date]
-)
+YTD Qty = TOTALYTD(SUM(ecommerce_data[order_quantity]), 'Calendar'[Date])
 
 -- ─────────────────────────────────────────
 -- 7. YoY Profit Margin Variance
 -- ─────────────────────────────────────────
-YoY Margin % =
-VAR CurrentMargin = [YTD Profit Margin]
-VAR PriorMargin =
-    CALCULATE(
-        [YTD Profit Margin],
-        SAMEPERIODLASTYEAR('Date'[Date])
-    )
-RETURN
-    DIVIDE(CurrentMargin - PriorMargin, ABS(PriorMargin), 0)
+YoY profit Margin = ([YTD Profit Margin]-[PYTD Profit Margin])/[PYTD Profit Margin]
+
 
 -- ─────────────────────────────────────────
 -- 8. Dynamic KPI Trend Color (Conditional)
